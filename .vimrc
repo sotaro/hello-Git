@@ -16,9 +16,11 @@ set nobackup
 set ruler
 set suffixes=.bak,~,.swp,.o,.out
 
-set autoindent
-"set smartindent
 set tabstop=4
+set shiftwidth=4
+set cindent
+"set autoindent
+"set smartindent
 
 syntax on
 colorscheme slate
