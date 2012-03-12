@@ -17,7 +17,7 @@ set ruler
 set suffixes=.bak,~,.swp,.o,.out
 
 set autoindent
-set smartindent
+"set smartindent
 set tabstop=4
 
 syntax on
@@ -29,6 +29,7 @@ set laststatus=2
 set wildmode=list:longest
 set nu
 set hlsearch
+map <Esc><Esc> :nohlsearch<CR><Esc>
 set nolist
 
 au BufRead,BufNewFile *.php set makeprg=php\ -l\ %
@@ -94,10 +95,10 @@ let g:neocomplcache_min_syntax_length = 3
 "
 let g:unite_enable_start_insert = 1
 noremap :uf :<C-u>Unite file<CR>
-noremap :um :<C-u>Unite file_mru -buffer-name=file_mru<CR>
+noremap :ub :<C-u>Unite buffer<CR>
 noremap :up :<C-u>call <SID>unite_project('-start-insert')<CR>
 
-"noremap :ub :<C-u>Unite buffer<CR>
+"noremap :um :<C-u>Unite file_mru -buffer-name=file_mru<CR>
 "noremap :uu :<C-u>Unite buffer file_mru<CR>
 "noremap :uo :<C-u>Unite outline<CR>
 "noremap :ur :<C-u>Unite -buffer-name=register register<CR>
@@ -111,3 +112,7 @@ function! s:unite_project(...)
   let dir = unite#util#path2project_directory(expand('%'))
   execute 'Unite' opts 'file_rec:' . dir
 endfunction
+
+" vimshell
+"
+noremap :ss :VimShell<CR>
